@@ -1,6 +1,6 @@
 # Imaging Subsystem Design
 
-This repository contains the final organised software package for the **Imaging Subsystem** of the sediment-trap based particle monitoring project.
+This repository contains the final organised software package for the **Imaging Subsystem** of the sediment-trap based particle monitoring project. For information regarding this project's Embedded Hardware and Sensing modules please follow the link to the github repository: https://github.com/Lawrenceismyname/Moored-Marine-Snow-Sediment-Trap
 
 The project is organised into three main parts:
 
