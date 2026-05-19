@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imaging Subsystem GUI</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <h1>Imaging Subsystem GUI</h1>
+            <p>ESP32-CAM image review, background subtraction, metadata display, particle detection and processing-stage visualisation.</p>
+        </div>
+        <span class="badge">240 × 240 processing frame • 0.354 mm/pixel</span>
+    </header>
+
+    <main class="layout">
+        <section class="panel controls">
+            <h2>1. Select captured image</h2>
+            <p class="hint">Place ESP32-CAM particle images in <code>captured_images/</code>, or upload one below.</p>
+
+            <div class="form-row">
+                <label for="imageSelect">Captured images</label>
+                <select id="imageSelect"></select>
+            </div>
+
+            <div class="form-row inline-upload">
+                <label for="imageUpload">Upload captured image</label>
+                <input id="imageUpload" type="file" accept="image/*" />
+                <button id="uploadBtn" class="secondary">Upload</button>
+            </div>
+
+            <div class="preview-box">
+                <img id="selectedPreview" alt="Selected image preview" />
+                <p id="emptyPreview">No image selected yet.</p>
+            </div>
+
+            <h2>2. Select background image</h2>
+            <p class="hint">Place empty-viewport/reference images in <code>background_images/</code>. Auto mode uses a matching filename, <code>background.png</code>, or the first background image found.</p>
+
+            <div class="form-row">
+                <label for="backgroundSelect">Background/reference image</label>
+                <select id="backgroundSelect"></select>
+            </div>
+
+            <div class="form-row inline-upload">
+                <label for="backgroundUpload">Upload background</label>
+                <input id="backgroundUpload" type="file" accept="image/*" />
+                <button id="uploadBackgroundBtn" class="secondary">Upload</button>
+            </div>
+
+            <div class="preview-box small-preview">
+                <img id="backgroundPreview" alt="Background image preview" />
+                <p id="emptyBackgroundPreview">Auto background selection enabled.</p>
+            </div>
+
+            <h2>3. Metadata</h2>
+            <p class="hint">Leave blank to use an image metadata file. If no file exists, the default DATA example is used.</p>
+            <textarea id="dataString" rows="3" placeholder="DATA:21,1000,5,1,2026,05,12,13,53,22"></textarea>
+
+            <button id="startBtn" class="primary">Start Processing</button>
+            <p id="status" class="status">Ready.</p>
+        </section>
+
+        <section class="panel results">
+            <div class="section-title">
+                <h2>Processing summary</h2>
+                <a id="csvLink" class="download hidden" href="#" download>Download CSV</a>
+            </div>
+            <div id="summaryCards" class="cards"></div>
+
+            <h2>Metadata results</h2>
+            <div id="metadataTable" class="kv-table"></div>
+
+            <h2>Processing stages</h2>
+            <div id="stagesGrid" class="stages-grid"></div>
+
+            <h2>Detected particles</h2>
+            <div class="table-wrap">
+                <table id="particleTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Class</th>
+                            <th>Area (mm²)</th>
+                            <th>Eq. diameter (mm)</th>
+                            <th>Aspect ratio</th>
+                            <th>Circularity</th>
+                            <th>Solidity</th>
+                            <th>Centroid (px)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
