@@ -39,14 +39,9 @@ The final repository structure is:
 
 ```text
 Imaging-Subsystem-Design/
-├── .github/
-├── .pio/
-├── .vscode/
 ├── analysis/
 ├── firmware/
 ├── gui/
-├── .gitattributes
-├── .gitignore
 └── README.md
 ```
 
@@ -54,14 +49,9 @@ Imaging-Subsystem-Design/
 
 | Folder/File | Description |
 |---|---|
-| `.github/` | GitHub configuration files, if used. |
-| `.pio/` | PlatformIO build folder generated locally. This should usually not be committed. |
-| `.vscode/` | VS Code workspace settings. |
 | `analysis/` | Python/OpenCV particle-analysis scripts, input folders and output folders. |
 | `firmware/` | ESP32-CAM firmware, PlatformIO project files, serial test tools and firmware-related extras. |
 | `gui/` | Web-based graphical interface for selecting images and viewing processing results. |
-| `.gitattributes` | Git line-ending and repository handling rules. |
-| `.gitignore` | Files and folders excluded from Git tracking. |
 | `README.md` | Main project documentation. |
 
 ---
