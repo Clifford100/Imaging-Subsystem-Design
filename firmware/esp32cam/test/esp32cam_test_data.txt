@@ -1,0 +1,6 @@
+# Format:
+# DATA:temperature_degC,pressure_hPa,conductivity_S_per_cm,activation_flag,YYYY,MM,DD,hh,mm,ss
+DATA:21.0,1000.0,5.0,1,2026,05,12,13,53,22
+DATA:20.8,1001.2,4.8,0,2026,05,12,13,58,22
+DATA:22.1,1002.0,5.4,1,2026,05,12,14,03,22
+DATA:21.6,999.8,5.1,1,2026,05,12,14,08,22
