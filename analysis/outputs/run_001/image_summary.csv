@@ -1,0 +1,4 @@
+image_index,image_name,circle_count,rod_count,irregular_count,total_count,circle_total_area_mm2,rod_total_area_mm2,irregular_total_area_mm2,total_particle_area_mm2,coverage_percent_of_85x85_fov
+1,photo_0001.jpg,18,0,0,18,505.5618,0.0,0.0,505.5618,6.9974
+2,photo_0002.jpg,0,0,15,15,0.0,0.0,1344.5901,1344.5901,18.6102
+3,photo_0003.jpg,0,12,0,12,0.0,731.3431,0.0,731.3431,10.1224
