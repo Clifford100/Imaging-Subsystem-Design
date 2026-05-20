@@ -444,37 +444,6 @@ Use this order when testing the full system:
 9. Run the analysis script to generate masks, overlays and CSV results.
 ```
 
----
-
-## Git Notes
-
-Generated files should usually not be committed.
-
-The `.gitignore` should exclude:
-
-```text
-.pio/
-__pycache__/
-*.pyc
-*.log
-```
-
-Before pushing to GitHub, check the repository status:
-
-```powershell
-git status
-```
-
-Then commit and push:
-
-```powershell
-git add .
-git commit -m "Update final imaging subsystem repository structure"
-git push
-```
-
----
-
 ## Troubleshooting
 
 ### `fatal: not a git repository`
